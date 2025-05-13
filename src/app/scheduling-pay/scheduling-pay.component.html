@@ -1,0 +1,37 @@
+<div class="form-container">
+  <h1 class="form-title">Agendar Transferência</h1>
+  <form (ngSubmit)="enviarTransferencia()">
+    <div>
+      <h3>Conta Destino</h3>
+      <label for="agenciaDestino">Agência:</label>
+      <input type="text" id="agenciaDestino" name="agenciaDestino" [(ngModel)]="formData.agenciaDestino" required>
+    </div>
+    <div>
+      <label for="contaDestino">Conta:</label>
+      <input type="text" id="contaDestino" name="contaDestino" [(ngModel)]="formData.contaDestino" required>
+    </div>
+
+    <div>
+      <h3>Conta Origem</h3>
+      <label for="agenciaOrigem">Agência:</label>
+      <input type="text" id="agenciaOrigem" name="agenciaOrigem" [(ngModel)]="formData.agenciaOrigem" required>
+    </div>
+    <div>
+      <label for="contaOrigem">Conta:</label>
+      <input type="text" id="contaOrigem" name="contaOrigem" [(ngModel)]="formData.contaOrigem" required>
+    </div>
+
+    <div>
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" name="valor" [(ngModel)]="formData.valor" required>
+    </div>
+
+    <div>
+      <label for="dataAgendamento">Data de Agendamento:</label>
+      <input type="date" id="dataAgendamento" name="dataAgendamento" [(ngModel)]="formData.dataAgendamento" required>
+    </div>
+
+    
+    <button type="submit">Enviar Transferência</button>
+  </form>
+</div>

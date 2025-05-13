@@ -1,0 +1,72 @@
+<div class="container lista-agendamentos">
+    <h1 class="titulo-listagem">Transferências Agendadas</h1>
+    <div class="lista-navegacao">
+        <a routerLink="/create-payment">Agendar Transferência</a>
+    </div>
+    <div class="lista-container">
+        <div class="tabelas-transferencia">
+            <div class="tabela-origem">
+                <table class="scheduling-table origem-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Origem</th>
+                        </tr>
+                        <tr>
+                            <th>Agência</th>
+                            <th>Conta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let payment of scheduledPayments">
+                            <td>{{ payment.originAgency }}</td>
+                            <td>{{ payment.originAccount }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tabela-destino">
+                <table class="scheduling-table destino-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Destino</th>
+                        </tr>
+                        <tr>
+                            <th>Agência</th>
+                            <th>Conta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let payment of scheduledPayments">
+                            <td>{{ payment.destinationAgency }}</td>
+                            <td>{{ payment.destinationAccount }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tabela-info">
+                <table class="scheduling-table detalhes-table">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Detalhes / Datas</th>
+                        </tr>
+                        <tr>
+                            <th>Valor da Transferência</th>
+                            <th>Taxa</th>
+                            <th>Data de Agendamento</th>
+                            <th>Data da Transferência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let payment of scheduledPayments">
+                            <td>{{ payment.transferAmount | currency:'BRL':'symbol':'1.2-2' }}</td>
+                            <td>{{ payment.tax ?? 0 | currency:'BRL':'symbol':'1.2-2' }}</td>
+                            <td>{{ formatDate(payment.schedulingDate) }}</td>
+                            <td>{{ formatDate(payment.transferDate) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p *ngIf="scheduledPayments.length === 0" class="mensagem-vazio">Nenhum agendamento encontrado.</p>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+.lista-agendamentos {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.titulo-listagem {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.lista-navegacao {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lista-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.tabelas-transferencia {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.tabela-origem,
+.tabela-destino,
+.tabela-info {
+    width: 32%;
+    box-sizing: border-box;
+    margin-right: 1%;
+    flex: 1 0 auto;
+}
+
+.tabela-origem:last-child,
+.tabela-destino:last-child,
+.tabela-info:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .tabelas-transferencia {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .tabela-origem,
+    .tabela-destino,
+    .tabela-info {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.scheduling-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.scheduling-table th,
+.scheduling-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.scheduling-table thead th {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.scheduling-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.scheduling-table tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+.mensagem-vazio {
+    margin-top: 15px;
+    font-style: italic;
+    color: #777;
+    text-align: center;
+}
