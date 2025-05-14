@@ -89,7 +89,7 @@ export class SchedulingPayListComponent implements OnInit {
 
   formatCurrency(value: number | null): string {
     if (value === null || value === undefined) {
-      return 'R$ 0,00'; // Ou outra representação para valores nulos
+      return 'R$ 0,00'; 
     }
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
