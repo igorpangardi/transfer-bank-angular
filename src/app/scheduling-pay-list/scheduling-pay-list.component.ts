@@ -27,7 +27,7 @@ export class SchedulingPayListComponent implements OnInit {
   loading = false;
   error: string | null = null;
 
-  private apiUrl = 'http://localhost:8080/api/scheduling-payments';
+  private apiUrl = 'http://localhost:8080/v1/payments';
 
   constructor(private http: HttpClient) { }
 
@@ -57,24 +57,47 @@ export class SchedulingPayListComponent implements OnInit {
   }
 
   formatDate(dateString: string): string {
-  if (!dateString) return '';
+    if (!dateString) return '';
 
-  try {
-    const parts = dateString.split(/[-T :]/);
-    const year = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1; 
-    const day = parseInt(parts[2], 10);
+    try {
+      const parts = dateString.split(/[-T :]/);
+      const year = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1;
+      const day = parseInt(parts[2], 10);
 
-    const date = new Date(year, month, day);
+      const date = new Date(year, month, day);
 
-    return date.toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric'
-    });
-  } catch (error) {
-    console.error('Erro ao formatar a data:', error);
-    return dateString; 
+      return date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+    } catch (error) {
+      console.error('Erro ao formatar a data:', error);
+      return dateString;
+    }
   }
-}
+
+  formatAccount(accountNumber: string): string {
+    if (accountNumber && accountNumber.length > 5) {
+      const part1 = accountNumber.substring(0, accountNumber.length - 1);
+      const part2 = accountNumber.substring(accountNumber.length - 1);
+      return `${part1}-${part2}`;
+    }
+    return accountNumber;
+  }
+
+  formatCurrency(value: number | null): string {
+    if (value === null || value === undefined) {
+      return 'R$ 0,00'; // Ou outra representação para valores nulos
+    }
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  }
+
+
 }

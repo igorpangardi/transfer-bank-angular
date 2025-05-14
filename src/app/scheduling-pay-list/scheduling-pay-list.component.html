@@ -1,8 +1,5 @@
 <div class="container lista-agendamentos">
     <h1 class="titulo-listagem">Transferências Agendadas</h1>
-    <div class="lista-navegacao">
-        <a routerLink="/create-payment">Agendar Transferência</a>
-    </div>
     <div class="lista-container">
         <div class="tabelas-transferencia">
             <div class="tabela-origem">
@@ -19,7 +16,7 @@
                     <tbody>
                         <tr *ngFor="let payment of scheduledPayments">
                             <td>{{ payment.originAgency }}</td>
-                            <td>{{ payment.originAccount }}</td>
+                            <td>{{ formatAccount(payment.originAccount) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -38,7 +35,7 @@
                     <tbody>
                         <tr *ngFor="let payment of scheduledPayments">
                             <td>{{ payment.destinationAgency }}</td>
-                            <td>{{ payment.destinationAccount }}</td>
+                            <td>{{ formatAccount(payment.destinationAccount) }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -58,8 +55,9 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let payment of scheduledPayments">
-                            <td>{{ payment.transferAmount | currency:'BRL':'symbol':'1.2-2' }}</td>
-                            <td>{{ payment.tax ?? 0 | currency:'BRL':'symbol':'1.2-2' }}</td>
+                            
+                            <td>{{ formatCurrency(payment.transferAmount)}}</td>
+                            <td>{{ formatCurrency(payment.tax)}}</td>
                             <td>{{ formatDate(payment.schedulingDate) }}</td>
                             <td>{{ formatDate(payment.transferDate) }}</td>
                         </tr>

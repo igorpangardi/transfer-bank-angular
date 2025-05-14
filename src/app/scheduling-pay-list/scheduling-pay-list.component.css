@@ -1,28 +1,22 @@
 .lista-agendamentos {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 90%;
+    max-width: 80%;
 }
 
 .titulo-listagem {
     text-align: center;
     color: #28a745;
-    margin-bottom: 20px;
-    font-size: 1.8em;
+    margin-bottom: 15px;
+    font-size: 1.6em; 
     font-weight: bold;
 }
 
-.lista-navegacao {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .lista-container {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
 }
 
 .tabelas-transferencia {
@@ -30,17 +24,18 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     overflow-x: auto;
 }
 
 .tabela-origem,
 .tabela-destino,
 .tabela-info {
-    width: 32%;
+    width: auto;
     box-sizing: border-box;
-    margin-right: 1%;
-    flex: 1 0 auto;
+    margin-right: 8px;
+    flex: 1;
+    flex-basis: 30%;
 }
 
 .tabela-origem:last-child,
@@ -60,26 +55,28 @@
     .tabela-info {
         width: 100%;
         margin-right: 0;
+        margin-bottom: 15px;
     }
 }
 
 .scheduling-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
-    margin: 20px auto;
-    max-width: 100%;
+    margin-bottom: 15px;
 }
 
 .scheduling-table th,
 .scheduling-table td {
     border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+    padding: 8px; 
+    text-align: center;
+    font-size: 1em;
+    white-space: nowrap;
 }
 
 .scheduling-table thead th {
@@ -87,8 +84,9 @@
     color: white;
     font-weight: bold;
     text-align: center;
+    padding: 10px;
+    font-size: 1.1em; 
 }
-
 
 .scheduling-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -99,8 +97,44 @@
 }
 
 .mensagem-vazio {
-    margin-top: 15px;
+    margin-top: 10px;
     font-style: italic;
     color: #777;
     text-align: center;
+}
+
+.detalhes-table tbody td:nth-child(1),
+.detalhes-table tbody td:nth-child(2) {
+    text-align: center;
+}
+
+.detalhes-table th:nth-child(1),
+.detalhes-table td:nth-child(1) {
+    width: 18%;
+}
+
+.detalhes-table th:nth-child(2),
+.detalhes-table td:nth-child(2) {
+    width: 12%;
+}
+
+.detalhes-table th:nth-child(3),
+.detalhes-table td:nth-child(3),
+.detalhes-table th:nth-child(4),
+.detalhes-table td:nth-child(4) {
+    width: auto;
+}
+
+.origem-table th:nth-child(1),
+.origem-table td:nth-child(1),
+.destino-table th:nth-child(1),
+.destino-table td:nth-child(1) {
+    width: 20%;
+}
+
+.origem-table th:nth-child(2),
+.origem-table td:nth-child(2),
+.destino-table th:nth-child(2),
+.destino-table td:nth-child(2) {
+    width: 30%;
 }
