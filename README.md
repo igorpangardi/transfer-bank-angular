@@ -1,59 +1,84 @@
-# FrontendApp
+# 💸 Frontend - Agendamento de Transferências Financeiras
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+## 📝 Descrição
 
-## Development server
+Este projeto representa o **frontend** de um sistema para **agendamento de transferências financeiras**, consumindo uma API RESTful construída com Spring Boot.  
+A interface foi desenvolvida com **Angular 19** e permite que o usuário agende e visualize transferências financeiras de forma simples e intuitiva.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Funcionalidades
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Agendamento de transferências**  
+  O usuário pode preencher um formulário com:
+  - Conta de origem (agência e conta)
+  - Conta de destino (agência e conta)
+  - Valor da transferência
+  - Data de agendamento  
+    A data da transferência é automaticamente definida como a data atual.
 
-## Code scaffolding
+- **Visualização de extrato**  
+  Listagem de todas as transferências já agendadas.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tecnologias Utilizadas
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Framework:** Angular 19
+- **Linguagens:** TypeScript, HTML, CSS
+- **Gerenciador de pacotes:** npm
+- **HTTP Client:** Angular `HttpClient`
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## ▶️ Como Executar
 
-To build the project run:
+### 1. Pré-requisitos
 
-```bash
-ng build
-```
+Certifique-se de ter instalado:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+- [Node.js](https://nodejs.org/) (recomendado: versão 18 ou superior)
+- npm (gerenciador de pacotes)
+- Angular CLI (caso não tenha, instale com o comando abaixo):
 
 ```bash
-ng e2e
+npm install -g @angular/cli
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+### 2. Clone o repositório
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+git clone https://github.com/igorpangardi/transfer-bank-angular
+cd transfer-bank-angular
+```
+
+---
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+---
+
+
+### 4. Inicie a aplicação
+
+```bash
+npm start
+```
+
+
+
+#### A aplicação irá rodar no endereço: 
+http:localhost:4200
+
+
+---
+
+### 5. Backend necessário
+#### Este frontend consome a API disponibilizada pelo backend descrito neste repositório:
+https://github.com/igorpangardi/transfer-bank
